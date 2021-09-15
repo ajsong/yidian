@@ -1,0 +1,26 @@
+依赖库
+CoreMedia.framework
+AudioToolbox.framework
+AVFoundation.framework
+MobileCoreServices.framework
+ImageIO.framework
+libc++.tbd
+libz.tbd
+libstdc++.6.0.9.tbd
+libsqlite3.tbd
+
+warning: PIE disabled. Absolute addressing (perhaps -mdynamic-no-pic) not allowed in code signed PIE
+Generate Position-Dependent Executable 设为 Yes
+
+General - Embedded Binaries
+添加 Hyphenate.framework
+
+上传AppStore时需要将i386 x86_64两个平台删除后，才能正常提交审核
+在SDK当前路径下执行以下命令删除i386 x86_64两个平台
+bak文件是备份目录，上传appstore之后需要替换回bak目录下的SDK
+mkdir ./bak
+cp -r Hyphenate.framework ./bak
+lipo Hyphenate.framework/Hyphenate -thin armv7 -output Hyphenate_armv7
+lipo Hyphenate.framework/Hyphenate -thin arm64 -output Hyphenate_arm64
+lipo -create Hyphenate_armv7 Hyphenate_arm64 -output Hyphenate
+mv Hyphenate Hyphenate.framework/

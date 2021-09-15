@@ -1,0 +1,50 @@
+http://www.umeng.com/
+
+安装统计、跟踪 UMAnalytics_SDK ====================================== 4.1.0
+依赖库:
+libz.tbd
+libsqlite.tbd
+CoreTelephony.framework
+
+导入
+#import "UMMobClick/MobClick.h"
+
+自动更新解决方案
+http://bbs.umeng.com/thread-11135-1-1.html
+
+
+消息推送 UMessage_SDK ====================================== 1.3.0
+依赖库:
+CoreLocation.framework
+
+导入
+#import "UMessage.h"
+
+
+快速登录、分享 UMSocial_SDK ====================================== 5.2.1
+依赖库:
+libz.tbd
+libiconv.tbd
+libsqlite3.tbd
+libstdc++.tbd
+Security.framework
+CoreTelephony.framework
+SystemConfiguration.framework
+CoreGraphics.Framework
+
+导入
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialWechatHandler.h"
+
+Other Linker Flags 加 -ObjC 否则新浪注册APP时会崩溃
+
+Info.plist
+添加 URL types
+增加一项(Editor)
+添加 URL Schemes
+QQ: tencent腾讯QQ互联APPID (分享须在URL types增加多一项和添加URL Schemes, QQ+互联APPID(16进制)(http://jinzhi.supfree.net))
+Sina: wb新浪APPKEY
+Wechat: wx微信OPENID
+

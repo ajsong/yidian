@@ -1,0 +1,18 @@
+//
+//  Prefix.pch
+//
+//  Created by ajsong on 15/6/3.
+//  Copyright (c) 2015年 Guangzhou Santi Trade Co., Ltd. All rights reserved.
+//Build Settings - Precompile Prefix Header - Yes
+//Build Settings - Prefix Header - $(PROJECT_DIR)/xxx/Prefix.pch
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
